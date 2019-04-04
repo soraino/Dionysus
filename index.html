@@ -68,7 +68,7 @@
       <div class="mx-auto text-center">
         <h1 class="mx-auto my-0 text-uppercase">Dionysus</h1>
         <h2 class="text-white-50 mx-auto mt-2 mb-5">Enjoy concerts from around the globe with the power of VR!</h2>
-        <a href="#products" class="btn btn-primary js-scroll-trigger">Book A POD now!</a>
+        <a href="#about" class="btn btn-primary js-scroll-trigger">What is Dionysus?</a>
       </div>
     </div>
   </header>
@@ -80,17 +80,19 @@
         <div class="col-lg-8 mx-auto">
           <h2 class="text-white mb-4">Dionysus</h2>
           <p class="text-white-50">
-           With the VR technology, Dionysus aims to provide you with a <strong style="text-decoration: underline">SUPER IMMERSIVE</strong> concert experience,
-            <br/>
+            With the VR technology, Dionysus aims to provide you with a <strong style="text-decoration: underline">SUPER
+              IMMERSIVE</strong> concert experience,
+            <br />
             as if you're attending the concert itself.
-            <br/>
-            <br/>
-            Dionysus will provide <strong style="text-decoration: underline">LIVE</strong> and <strong style="text-decoration: underline">RECORDED</strong> concert services!
+            <br />
+            <br />
+            Dionysus will provide <strong style="text-decoration: underline">LIVE</strong> and <strong
+              style="text-decoration: underline">RECORDED</strong> concert services!
             <br>
             <br>
             <a href="#products" class="btn btn-primary js-scroll-trigger">Book A POD now!</a>
           </p>
-          
+
         </div>
       </div>
       <img src="img/dj.png" class="img-fluid mb-5" alt="">
@@ -134,7 +136,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="row p-5 bg-dark rounded-lg">
         <h2 class="col-12 mb-4 text-center text-white-50">
           See if your favourite artists are playing!
@@ -142,17 +144,16 @@
         <div class="col-12 input-group mb-3">
           <div class="input-group-prepend"><label class="input-group-text">Location</label></div>
           <select class="custom-select">
-            <option >Jurong Branch</option>
-            <option >East Coast Branch</option>
             <option selected>Orchard Branch</option>
           </select>
         </div>
         <div class="col-12 col-lg-4 mb-3">
           <div class="list-group">
-            <a class="list-group-item list-group-item-action active" data-toggle="list" href="#show1">
+            <a class="list-group-item list-group-item-action active" data-toggle="list" href="#show1"
+              onclick="changeShow(0)">
               Ed Sheeran Live in England
             </a>
-            <a class="list-group-item list-group-item-action" data-toggle="list" href="#show2">
+            <a class="list-group-item list-group-item-action" data-toggle="list" href="#show2" onclick="changeShow(1)">
               Ariana Grande Live in New Jersey
             </a>
           </div>
@@ -164,27 +165,27 @@
                 <p>Ed Sheeran</p>
                 <p>Time: 5:30AM</p>
                 <p>Concert location: Scape<p>
-                <div class="align-items-center">
-                  <a href="#book" class="btn btn-primary js-scroll-trigger mb-2">
-                    POD&trade; | 2 left
-                  </a>
-                  <a href="#book" class="btn btn-primary js-scroll-trigger mb-2">
-                    POD+&trade; | 3 left
-                  </a>
-                </div>
+                    <div class="align-items-center">
+                      <a href="#book" class="btn btn-primary js-scroll-trigger mb-2" onclick="clickPod(0)">
+                        POD&trade; | 2 left
+                      </a>
+                      <a href="#book" class="btn btn-primary js-scroll-trigger mb-2" onclick="clickPod(1)">
+                        POD+&trade; | 3 left
+                      </a>
+                    </div>
               </div>
               <div class="tab-pane fade" id="show2">
                 <p>Ariana Grande</p>
-                <p>Time: 7:30AM</p>
+                <p>Time: 5:30AM</p>
                 <p>Concert location: Scape<p>
-                <div>
-                  <a href="#book" class="btn btn-primary js-scroll-trigger mb-2">
-                    POD&trade; | 10 left
-                  </a>
-                  <a href="#book" class="btn btn-primary js-scroll-trigger mb-2">
-                    POD+&trade; | 9 left
-                  </a>
-                </div>
+                    <div>
+                      <a href="#book" class="btn btn-primary js-scroll-trigger mb-2" onclick="clickPod(0)">
+                        POD&trade; | 10 left
+                      </a>
+                      <a href="#book" class="btn btn-primary js-scroll-trigger mb-2" onclick="clickPod(1)">
+                        POD+&trade; | 9 left
+                      </a>
+                    </div>
               </div>
             </div>
           </div>
@@ -308,10 +309,11 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12 col-lg-6 left-book-pane">
-          <div class="h-100 d-flex flex-column align-items-center align-items-lg-end justify-content-center text-center">
-              <p class="display-2">POD+&trade; Live</p>
-              <p class="display-3">Ed Sheeran</p>
-              <p class="display-4">5:30AM</p>
+          <div
+            class="h-100 d-flex flex-column align-items-center align-items-lg-end justify-content-center text-center">
+            <p class="display-2" id="podType">POD&trade;</p>
+            <p class="display-3" style="text-align: right !important;" id="concert">Ed Sheeran in England</p>
+            <p class="display-4" id="timing">05:30AM</p>
           </div>
         </div>
         <div class="col-12 col-lg-6 bg-black">
@@ -320,36 +322,37 @@
               <div class="mb-3">
                 <h3>Booking details:</h3>
                 <div class="form-row">
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-md-6">
                     <label for="inputDate">Date</label>
                     <input type="date" class="form-control" id="inputDate">
                   </div>
-                  <div class="form-group col-6 col-md-4">
+                  <div class="form-group col-6 col-md-6">
                     <label for="inputDate">Time</label>
-                    <input type="time" class="form-control" id="inputTime">
-                  </div>
-                  <div class="form-group col-6 col-md-4">
-                    <label for="inputHours">Duration (Hours)</label>
-                    <input type="number" class="form-control" id="inputHours" min="3">
+                    <input type="time" class="form-control" id="inputTime" onchange="timingEnableUpdate()" disabled>
                   </div>
                 </div>
                 <div class="form-row">
-                  <div class="form-group col-md-6">
+                  <div class="form-group col-md-4">
                     <label>Branch</label>
                     <select class="custom-select">
-                      <option >Jurong Branch</option>
-                      <option >East Coast Branch</option>
                       <option selected>Orchard Branch</option>
                     </select>
                   </div>
-                  <div class="form-group col-md-6">
-                      <label>Show</label>
-                      <select class="custom-select">
-                        <option selected>Ed Sheeran Live in England</option>
-                        <option >Ariana Grande Live in New Jersey</option>
-                        <option >Recording</option>
-                      </select>
-                    </div>
+                  <div class="form-group col-md-4">
+                    <label>Show</label>
+                    <select class="custom-select" id="concertSelect" onchange="selectUpdateConcert()">
+                      <option selected value="Ed Sheeran Live in England">Ed Sheeran Live in England</option>
+                      <option value="Ariana Grande Live in New Jersey">Ariana Grande Live in New Jersey</option>
+                      <option value="Recording: Cold Play">Recording: Cold Play</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label>Pod Type</label>
+                    <select class="custom-select" id="podSelect" onchange="selectPodUpdate()">
+                      <option value="POD&trade;" selected>POD&trade;</option>
+                      <option value="POD+&trade;">POD+&trade;</option>
+                    </select>
+                  </div>
                 </div>
               </div>
               <div class="mb-3">
@@ -458,7 +461,60 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/grayscale.min.js"></script>
+  <script>
+    function changeShow(val) {
+      document.getElementById('concertSelect').selectedIndex = val
+      document.getElementById('concert').innerHTML = document.getElementById('concertSelect').value
+      document.getElementById('timing').innerHTML = '05:30AM'
+      document.getElementById('inputTime').disabled = true
+    }
 
+    function selectUpdateConcert() {
+      document.getElementById('concert').innerHTML = document.getElementById('concertSelect').value
+
+      if (document.getElementById('concertSelect').value == 'Recording: Cold Play') {
+        document.getElementById('inputTime').disabled = false
+        document.getElementById('timing').innerHTML = ''
+      } else {
+        document.getElementById('inputTime').disabled = true
+        document.getElementById('timing').innerHTML = '05:30AM'
+      }
+    }
+
+    function clickPod(val) {
+      document.getElementById('podSelect').selectedIndex = val
+      if (val == 0) {
+        document.getElementById('podType').innerHTML = 'POD&trade;'
+      } else if (val == 1) {
+        document.getElementById('podType').innerHTML = 'POD+&trade;'
+      }
+    }
+
+    function selectPodUpdate() {
+      document.getElementById('podType').innerHTML = document.getElementById('podSelect').value
+    }
+
+    function timingEnableUpdate() {
+      var timeSplit = document.getElementById('inputTime').value.split(':'),
+        hours,
+        minutes,
+        meridian;
+      hours = timeSplit[0];
+      minutes = timeSplit[1];
+      if (hours > 12) {
+        meridian = 'PM';
+        hours -= 12;
+      } else if (hours < 12) {
+        meridian = 'AM';
+        if (hours == 0) {
+          hours = 12;
+        }
+      } else {
+        meridian = 'PM';
+      }
+      document.getElementById('timing').innerHTML = hours + ':' + minutes + meridian
+    }
+  </script>
 </body>
 
 </html>
