@@ -131,7 +131,7 @@
           </div>
         </div>
       </div>
-
+      
       <div class="row p-5 bg-dark rounded-lg">
         <h2 class="col-12 mb-4 text-center text-white-50">See if your favourite artists are playing!</h2>
         <div class="col-12 input-group mb-3">
@@ -144,19 +144,34 @@
         </div>
         <div class="col-12 col-lg-4 mb-3">
           <div class="list-group">
-            <a class="list-group-item list-group-item-action active" data-toggle="list">Ed Sheeran Live in England</a>
-            <a class="list-group-item list-group-item-action" data-toggle="list">Ariana Grande Live in New Jersey</a>
+            <a class="list-group-item list-group-item-action active" data-toggle="list" href="#show1">
+              Ed Sheeran Live in England
+            </a>
+            <a class="list-group-item list-group-item-action" data-toggle="list" href="#show2">
+              Ariana Grande Live in New Jersey
+            </a>
           </div>
         </div>
         <div class="col-12 col-lg-8">
           <div class="bg-white rounded p-4">
-            <div class="d-flex flex-column align-items-start">
-              <p>Ed Sheeran</p>
-              <p>Time: 5:30AM</p>
-              <p>Concert location: Scape<p>
-              <div>
-                <button class="btn btn-primary">POD&trade; | 10 left</button>
-                <button class="btn btn-primary">POD+&trade; | 10 left</button>
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="show1">
+                <p>Ed Sheeran</p>
+                <p>Time: 5:30AM</p>
+                <p>Concert location: Scape<p>
+                <div class="align-items-center">
+                  <button class="btn btn-primary mb-2">POD&trade; | 2 left</button>
+                  <button class="btn btn-primary mb-2">POD+&trade; | 3 left</button>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="show2">
+                <p>Ariana Grande</p>
+                <p>Time: 7:30AM</p>
+                <p>Concert location: Scape<p>
+                <div>
+                  <button class="btn btn-primary mb-2">POD&trade; | 10 left</button>
+                  <button class="btn btn-primary mb-2">POD+&trade; | 9 left</button>
+                </div>
               </div>
             </div>
           </div>
