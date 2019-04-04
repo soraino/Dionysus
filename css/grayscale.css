@@ -258,6 +258,15 @@
   }
 }
 
+.book-section {
+  margin-bottom: 10rem;
+}
+
+.book-section .left-book-pane {
+  height: 50rem;
+  background: url("../img/bg-concert-blur.jpg");
+}
+
 .signup-section {
   padding: 10rem 0;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.1)), color-stop(75%, rgba(22, 22, 22, 0.5)), to(#161616)), url("../img/bg-signup.jpg");

@@ -52,6 +52,9 @@
             <a class="nav-link js-scroll-trigger" href="#testimonials">Testimonials</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#book">Book</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
           </li>
         </ul>
@@ -94,10 +97,10 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Products Section -->
   <section id="products" class="projects-section bg-light">
     <div class="container">
-      <h2 class="text-center text-black mb-5">Our Products</h2>
+      <h2 class="text-center text-black display-4 mb-5">Our Products</h2>
       <div class="row align-items-center no-gutters mb-4 mb-lg-5">
         <div class="col-xl-4 col-lg-5">
           <img class="img-fluid mb-3 mb-lg-0" src="img/POD.png" alt="">
@@ -133,7 +136,9 @@
       </div>
       
       <div class="row p-5 bg-dark rounded-lg">
-        <h2 class="col-12 mb-4 text-center text-white-50">See if your favourite artists are playing!</h2>
+        <h2 class="col-12 mb-4 text-center text-white-50">
+          See if your favourite artists are playing!
+        </h2>
         <div class="col-12 input-group mb-3">
           <div class="input-group-prepend"><label class="input-group-text">Location</label></div>
           <select class="custom-select">
@@ -160,8 +165,12 @@
                 <p>Time: 5:30AM</p>
                 <p>Concert location: Scape<p>
                 <div class="align-items-center">
-                  <button class="btn btn-primary mb-2">POD&trade; | 2 left</button>
-                  <button class="btn btn-primary mb-2">POD+&trade; | 3 left</button>
+                  <a href="#book" class="btn btn-primary js-scroll-trigger mb-2">
+                    POD&trade; | 2 left
+                  </a>
+                  <a href="#book" class="btn btn-primary js-scroll-trigger mb-2">
+                    POD+&trade; | 3 left
+                  </a>
                 </div>
               </div>
               <div class="tab-pane fade" id="show2">
@@ -169,8 +178,12 @@
                 <p>Time: 7:30AM</p>
                 <p>Concert location: Scape<p>
                 <div>
-                  <button class="btn btn-primary mb-2">POD&trade; | 10 left</button>
-                  <button class="btn btn-primary mb-2">POD+&trade; | 9 left</button>
+                  <a href="#book" class="btn btn-primary js-scroll-trigger mb-2">
+                    POD&trade; | 10 left
+                  </a>
+                  <a href="#book" class="btn btn-primary js-scroll-trigger mb-2">
+                    POD+&trade; | 9 left
+                  </a>
                 </div>
               </div>
             </div>
@@ -179,7 +192,9 @@
       </div>
     </div>
   </section>
-  <section id="testimonials" class="projects-section bg-light mb-5">
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="projects-section bg-light">
     <div class="container">
       <h2 class="text-center text-black mb-5">What <strong style="text-decoration: underline !important;">our
           customers</strong> are saying</h2>
@@ -287,6 +302,90 @@
       </div>
     </div>
   </section>
+
+  <!-- Book Section -->
+  <section id="book" class="book-section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-lg-6 left-book-pane">
+          <div class="h-100 d-flex flex-column align-items-center align-items-lg-end justify-content-center">
+            <p class="display-2">POD+&trade; Live</p>
+            <p class="display-3">Ed Sheeran</p>
+            <p class="display-4">5:30AM</p>
+            <p></p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 bg-black">
+          <div class="h-100 d-flex flex-column justify-content-center mx-4 mb-5 text-white-50">
+            <form>
+              <div class="mb-3">
+                <h3>Booking details:</h3>
+                <div class="form-row">
+                  <div class="form-group col-md-4">
+                    <label for="inputDate">Date</label>
+                    <input type="date" class="form-control" id="inputDate">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputDate">Time</label>
+                    <input type="time" class="form-control" id="inputTime">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputHours">Duration (Hours)</label>
+                    <input type="number" class="form-control" id="inputHours" min="3">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label>Branch</label>
+                    <select class="custom-select">
+                      <option >Jurong Branch</option>
+                      <option >East Coast Branch</option>
+                      <option selected>Orchard Branch</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-6">
+                      <label>Show</label>
+                      <select class="custom-select">
+                        <option selected>Ed Sheeran Live in England</option>
+                        <option >Ariana Grande Live in New Jersey</option>
+                        <option >Recording</option>
+                      </select>
+                    </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <h3>Enter your details:</h3>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputFirstName">First Name</label>
+                    <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputLastName">Last Name</label>
+                    <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputEmail">Email Address</label>
+                  <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Recieve emails from us
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Book</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact Section -->
   <section class="contact-section bg-black" id="contact">
     <div class="container">
