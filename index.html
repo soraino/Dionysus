@@ -210,10 +210,10 @@
                   Concert location: Scape
                 </p>
                 <div class="align-items-center">
-                  <a href="#book" class="btn btn-primary js-scroll-trigger mb-2" onclick="clickPod(0)">
+                  <a href="#book" class="btn btn-primary js-scroll-trigger mb-2" onclick="changeShow(0); clickPod(0)">
                     POD&trade; | 2 left!
                   </a>
-                  <a href="#book" class="btn btn-primary js-scroll-trigger mb-2" onclick="clickPod(1)">
+                  <a href="#book" class="btn btn-primary js-scroll-trigger mb-2" onclick="changeShow(0); clickPod(1)">
                     POD+&trade; | 3 left!
                   </a>
                 </div>
@@ -222,14 +222,14 @@
                 <p>Ariana Grande</p>
                 <p>
                   Date: 5<sup>th</sup> June 2019<br>
-                  Time: 5:30AM<br>
+                  Time: 6:30AM<br>
                   Concert location: Scape
                 </p>
                 <div>
-                  <a href="#book" class="btn btn-primary js-scroll-trigger mb-2" onclick="clickPod(0)">
+                  <a href="#book" class="btn btn-primary js-scroll-trigger mb-2" onclick="changeShow(1); clickPod(0)">
                     POD&trade; | 10 left!
                   </a>
-                  <a href="#book" class="btn btn-primary js-scroll-trigger mb-2" onclick="clickPod(1)">
+                  <a href="#book" class="btn btn-primary js-scroll-trigger mb-2" onclick="changeShow(1); clickPod(1)">
                     POD+&trade; | 9 left!
                   </a>
                 </div>
@@ -422,7 +422,7 @@
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck">
                     <label class="form-check-label" for="gridCheck">
-                      Recieve emails from us
+                      Receive emails from us
                     </label>
                   </div>
                 </div>
@@ -511,30 +511,36 @@
   <script>
     function changeShow(val) {
       document.getElementById('concertSelect').selectedIndex = val
-      document.getElementById('concert').innerHTML = document.getElementById('concertSelect').value
-      document.getElementById('timing').innerHTML = '05:30AM'
-      document.getElementById('inputTime').disabled = true
+      selectUpdateConcert()
     }
 
     function selectUpdateConcert() {
       document.getElementById('concert').innerHTML = document.getElementById('concertSelect').value
 
-      if (document.getElementById('concertSelect').value == 'Recording: Cold Play') {
-        document.getElementById('inputTime').disabled = false
-        document.getElementById('timing').innerHTML = ''
-      } else {
-        document.getElementById('inputTime').disabled = true
+      var concertIndex = document.getElementById('concertSelect').selectedIndex
+      if (concertIndex == 0) {
         document.getElementById('timing').innerHTML = '05:30AM'
+        document.getElementById('inputDate').value = "2019-06-04"
+        document.getElementById('inputDate').disabled = true
+        document.getElementById('inputTime').value = '05:30'
+        document.getElementById('inputTime').disabled = true
+      } else if (concertIndex == 1) {
+        document.getElementById('timing').innerHTML = '06:30AM'
+        document.getElementById('inputTime').value = '06:30'
+        document.getElementById('inputTime').disabled = true
+        document.getElementById('inputDate').value = "2019-06-05"
+        document.getElementById('inputDate').disabled = true
+      } else {
+        document.getElementById('timing').innerHTML = ''
+        document.getElementById('inputDate').disabled = false
+        document.getElementById('inputTime').disabled = false
+        timingEnableUpdate()
       }
     }
 
     function clickPod(val) {
       document.getElementById('podSelect').selectedIndex = val
-      if (val == 0) {
-        document.getElementById('podType').innerHTML = 'POD&trade;'
-      } else if (val == 1) {
-        document.getElementById('podType').innerHTML = 'POD+&trade;'
-      }
+      selectPodUpdate()
     }
 
     function selectPodUpdate() {
