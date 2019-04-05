@@ -357,10 +357,10 @@
       <div class="row">
         <div class="col-12 col-lg-6 left-book-pane">
           <div
-            class="h-100 d-flex flex-column align-items-center align-items-lg-end justify-content-center text-center">
+            class="h-100 d-flex flex-column align-items-center align-items-lg-end justify-content-center text-center text-lg-right">
             <p class="display-2" id="podType">POD&trade;</p>
-            <p class="display-3" style="text-align: right !important;" id="concert">Ed Sheeran in England</p>
-            <p class="display-4" id="timing">05:30AM</p>
+            <p class="display-3" id="concert">Recording: Cold Play</p>
+            <p class="display-4" id="timing">09:30AM</p>
           </div>
         </div>
         <div class="col-12 col-lg-6 bg-black">
@@ -371,11 +371,11 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputDate">Date</label>
-                    <input type="date" class="form-control" id="inputDate">
+                    <input type="date" value="2019-06-01" class="form-control" id="inputDate">
                   </div>
                   <div class="form-group col-6 col-md-6">
-                    <label for="inputDate">Time</label>
-                    <input type="time" class="form-control" id="inputTime" onchange="timingEnableUpdate()" disabled>
+                    <label for="inputTime">Time</label>
+                    <input type="time" value="09:30" class="form-control" id="inputTime" onchange="timingEnableUpdate()">
                   </div>
                 </div>
                 <div class="form-row">
@@ -388,9 +388,9 @@
                   <div class="form-group col-md-4">
                     <label>Show</label>
                     <select class="custom-select" id="concertSelect" onchange="selectUpdateConcert()">
-                      <option selected value="Ed Sheeran Live in England">Ed Sheeran Live in England</option>
+                      <option value="Ed Sheeran Live in England">Ed Sheeran Live in England</option>
                       <option value="Ariana Grande Live in New Jersey">Ariana Grande Live in New Jersey</option>
-                      <option value="Recording: Cold Play">Recording: Cold Play</option>
+                      <option selected value="Recording: Cold Play">Recording: Cold Play</option>
                     </select>
                   </div>
                   <div class="form-group col-md-4">
